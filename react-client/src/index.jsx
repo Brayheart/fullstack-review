@@ -15,7 +15,17 @@ class App extends React.Component {
 
   search (term) {
     console.log(`${term} was searched`);
-    // TODO
+    $.ajax({
+      url : 'http://localhost:1128/',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        console.log(data)
+      },
+      error: function(request, error) {
+        
+      }
+    })
   }
 
   render () {
